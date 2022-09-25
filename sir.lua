@@ -1,3 +1,6 @@
+-- MADE BY Blissful#4992 / CornCatCornDog on V3rmillion --
+coroutine.wrap(function()
+    local script = [[
         repeat wait() until game:GetService("Players") ~= nil and game:GetService("Players").LocalPlayer ~= nil
     
         rconsoleclear()
@@ -126,7 +129,7 @@
             TS:TeleportToPlaceInstance(game.PlaceId, Servers.data[math.random(1, #Servers.data)].id)
             game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
                 if State == Enum.TeleportState.Started then
-                    syn.queue_on_teleport('loadstring(readfile("sir.lua"))()')
+                    syn.queue_on_teleport('loadstring(game:HttpGet("https://raw.githubusercontent.com/Green-bit1/Hmm/main/sir.lua"))()')
                 end
             end)
             
@@ -143,4 +146,8 @@
             rconsoleprint("@@LIGHT_CYAN@@")
             rconsoleprint(new.."\n")
         end
+    ]]
     
+    task.wait()
+    loadstring(readfile("https://raw.githubusercontent.com/Green-bit1/Hmm/main/sir.lua"))()
+end)()
